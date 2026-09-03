@@ -1,5 +1,5 @@
-import React from 'react';
-import { Play, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import React from "react";
+import { Play, ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 
 interface HeroSectionProps {
   onOpenVslModal: () => void;
@@ -23,21 +23,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* 1. HERO Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mx-auto">
-          Când un potențial client te caută pe <span className="text-[#4285F4]">G</span>
-                  <span className="text-[#EA4335]">o</span>
-                  <span className="text-[#FBBC05]">o</span>
-                  <span className="text-[#4285F4]">g</span>
-                  <span className="text-[#34A853]">l</span>
-                  <span className="text-[#EA4335]">e</span>,{' '}
-      
-          <span className="underline decoration-4">
-            ce găsește?
-          </span>
+          Când un potențial client te caută pe{" "}
+          <span className="text-[#4285F4]">G</span>
+          <span className="text-[#EA4335]">o</span>
+          <span className="text-[#FBBC05]">o</span>
+          <span className="text-[#4285F4]">g</span>
+          <span className="text-[#34A853]">l</span>
+          <span className="text-[#EA4335]">e</span>,{" "}
+          <span className="underline decoration-4">ce găsește?</span>
         </h1>
 
         {/* Subheadline */}
         <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed mx-auto font-normal">
-          Descoperă în doar câteva minute de ce pierzi clienți din cauza unei prezențe online slabe și cum poți construi un brand digital care inspiră încredere și aduce clienți.
+          Descoperă în doar câteva minute de ce pierzi clienți din cauza unei
+          prezențe online slabe și cum poți construi un brand digital care
+          inspiră încredere și aduce clienți.
         </p>
 
         {/* Video Player Preview (Modern Glassmorphic Stage) */}
@@ -48,7 +48,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           >
             {/* Background Graphic Visual */}
             <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-teal-950/80 to-slate-900 opacity-95 group-hover:scale-105 transition-transform duration-700" />
-            
+
             {/* Decorative Grid Lines */}
             <div className="absolute inset-0 bg-[radial-gradient(#14b8a6_1px,transparent_1px)] [background-size:24px_24px] opacity-20" />
 
@@ -78,7 +78,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Bottom Caption bar inside preview */}
             <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-slate-400 bg-slate-900/80 backdrop-blur-md px-4 py-2 rounded-xl border border-slate-700/60 z-10">
               <span>De la căutare pe Google la prima ședință</span>
-              <span className="font-mono text-teal-400 font-bold">06:30 min</span>
+              <span className="font-mono text-teal-400 font-bold">
+                06:30 min
+              </span>
             </div>
           </div>
 
@@ -88,7 +90,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               onClick={onOpenAuditModal}
               className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl border border-sky-300/40 bg-[#1a2b6a] px-8 py-4 text-md font-bold text-white shadow-[0_14px_30px_rgba(37,99,235,0.45)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_18px_36px_rgba(37,99,235,0.52)] cursor-pointer"
             >
-              <span className="absolute inset-0 bg-blue opacity-90" />
+              <span className="absolute inset-0 bg-[#243b8f] opacity-90" />
               <span className="absolute -top-10 left-1/2 h-20 w-28 -translate-x-1/2 rounded-full bg-sky-200/20 blur-xl" />
               <span className="absolute inset-x-3 bottom-1 h-5 rounded-full bg-blue-950/40 blur-md" />
               <span className="relative inline-flex items-center gap-3">
@@ -106,11 +108,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </button>
           </div>
         </div>
-
-        
       </div>
     </section>
   );
 };
-
-

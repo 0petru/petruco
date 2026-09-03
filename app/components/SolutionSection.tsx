@@ -1,51 +1,70 @@
-import React from 'react';
-import { Monitor, MapPin, Search, TrendingUp, PhoneCall, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import React from "react";
+import {
+  Monitor,
+  MapPin,
+  Search,
+  TrendingUp,
+  PhoneCall,
+  ArrowRight,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 
 interface SolutionSectionProps {
   onOpenAuditModal: () => void;
 }
 
-export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenAuditModal }) => {
+export const SolutionSection: React.FC<SolutionSectionProps> = ({
+  onOpenAuditModal,
+}) => {
   const pillars = [
     {
       icon: <Monitor className="w-5 h-5" />,
-      num: '01',
-      title: 'Website profesional dedicat',
-      badge: 'Design & Conținut',
-      description: 'Structură creată special pentru servicii psihologice: design minimalist, cald, adaptat eticii profesionale, optimizat pe telefon și cu texte clare despre abordarea ta.'
+      num: "01",
+      title: "Website profesional dedicat",
+      badge: "Design & Conținut",
+      description:
+        "Structură creată special pentru servicii psihologice: design minimalist, cald, adaptat eticii profesionale, optimizat pe telefon și cu texte clare despre abordarea ta.",
     },
     {
       icon: <MapPin className="w-5 h-5" />,
-      num: '02',
-      title: 'Google Business & Maps',
-      badge: 'Localizare Precisă',
-      description: 'Configurare, verificare și optimizare a profilului de pe Google Maps cu pin exact, fotografii primitoare din cabinet, orar corect și categorii medicale adecvate.'
+      num: "02",
+      title: "Google Business & Maps",
+      badge: "Localizare Precisă",
+      description:
+        "Configurare, verificare și optimizare a profilului de pe Google Maps cu pin exact, fotografii primitoare din cabinet, orar corect și categorii medicale adecvate.",
     },
     {
       icon: <Search className="w-5 h-5" />,
-      num: '03',
-      title: 'Indexare & Vizibilitate Google',
-      badge: 'Căutare după Nume',
-      description: 'Asigurăm că numele tău și cabinetul apar imediat pe prima poziție atunci când o persoană îți caută numele după o recomandare primită.'
+      num: "03",
+      title: "Indexare & Vizibilitate Google",
+      badge: "Căutare după Nume",
+      description:
+        "Asigurăm că numele tău și cabinetul apar imediat pe prima poziție atunci când o persoană îți caută numele după o recomandare primită.",
     },
     {
       icon: <TrendingUp className="w-5 h-5" />,
-      num: '04',
-      title: 'SEO local specializat',
-      badge: 'Căutări Locale',
-      description: 'Optimizare pentru căutări relevante în orașul sau sectorul tău (ex: „psihoterapeut anxietate București”, „psiholog copii Sector 1”).'
+      num: "04",
+      title: "SEO local specializat",
+      badge: "Căutări Locale",
+      description:
+        "Optimizare pentru căutări relevante în orașul sau sectorul tău (ex: „psihoterapeut anxietate București”, „psiholog copii Sector 1”).",
     },
     {
       icon: <PhoneCall className="w-5 h-5" />,
-      num: '05',
-      title: 'Contact & programare confidențială',
-      badge: 'Conversie Pacient',
-      description: 'Formular securizat, buton rapid de WhatsApp, apel direct și explicații despre pașii primei ședințe pentru a elimina orice barieră de comunicare.'
-    }
+      num: "05",
+      title: "Contact & programare confidențială",
+      badge: "Conversie Pacient",
+      description:
+        "Formular securizat, buton rapid de WhatsApp, apel direct și explicații despre pașii primei ședințe pentru a elimina orice barieră de comunicare.",
+    },
   ];
 
   return (
-    <section id="solutie" className="py-16 sm:py-24 bg-slate-50 border-b border-slate-200/80">
+    <section
+      id="solutie"
+      className="py-16 sm:py-24 bg-slate-50 border-b border-slate-200/80"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -57,7 +76,8 @@ export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenAuditMod
             Sistemul de Prezență Digitală pentru Psihologi
           </h2>
           <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed">
-            Construim întreaga experiență online a unui cabinet — de la prima tastare a numelui pe Google până la primul mesaj de programare.
+            Construim întreaga experiență online a unui cabinet. De la prima
+            tastare a numelui pe Google până la primul mesaj de programare.
           </p>
         </div>
 
@@ -109,7 +129,8 @@ export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenAuditMod
                 Tu ai grijă de pacienți, noi avem grijă de tot ce e tehnic
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                Găzduire ultra-rapidă, securitate SSL, actualizări continue și respectarea strictă a normelor deontologice.
+                Găzduire ultra-rapidă, securitate SSL, actualizări continue și
+                respectarea strictă a normelor deontologice.
               </p>
             </div>
 
@@ -128,5 +149,3 @@ export const SolutionSection: React.FC<SolutionSectionProps> = ({ onOpenAuditMod
     </section>
   );
 };
-
-

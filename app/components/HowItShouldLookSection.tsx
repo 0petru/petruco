@@ -2,29 +2,261 @@ import React from "react";
 import {
   AlertTriangle,
   ArrowDown,
+  Bookmark,
   Camera,
+  CarFront,
+  Globe,
+  MapPin,
   MapPinOff,
   Mic,
+  Phone,
   Search,
+  Star,
   X,
 } from "lucide-react";
 import Image from "next/image";
 
-export const WhatTheyFindSection: React.FC = () => {
+export const HowItShouldLookSection: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+    <section
+      id="prezenta-online"
+      className="py-20 sm:py-20 bg-white border-b border-slate-200/80"
+    >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-50 text-red-700 border border-red-200/80 mb-3">
-            <AlertTriangle className="w-3.5 h-3.5" />
-            <span>Situația comună</span>
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Ce găsește un potențial client în 80% din cazuri?
-          </h2>
+        <div className="text-center">
+          <h1 className="pb-10 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+            Așa arată o prezență bună
+          </h1>
+
+          <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-[0_18px_45px_rgba(15,23,42,0.10)]">
+            <div className="border-b border-[#ebebeb] px-4 pt-5 sm:px-10 sm:pt-6">
+              <div className="flex items-center gap-4 sm:gap-8">
+                <Image
+                  src="/logo/google.png"
+                  alt="Google"
+                  width={94}
+                  height={32}
+                  className="h-auto w-[70px] shrink-0 object-contain sm:w-[94px]"
+                />
+                <div className="flex h-11 min-w-0 flex-1 items-center gap-3 rounded-full border border-[#dfe1e5] px-4 shadow-[0_1px_6px_rgba(32,33,36,0.20)]">
+                  <span className="min-w-0 flex-1 truncate text-sm text-[#202124] sm:text-base">
+                    Dr. Elena Radu Psiholog București
+                  </span>
+                  <Search className="h-4 w-4 shrink-0 text-[#4285f4]" />
+                </div>
+              </div>
+              <div className="ml-[86px] mt-5 flex gap-5 text-[11px] text-[#5f6368] sm:gap-6 sm:text-xs">
+                <span className="border-b-[3px] border-[#1a73e8] pb-3 font-medium text-[#1a73e8]">
+                  Toate
+                </span>
+                <span className="pb-3">Hărți</span>
+                <span className="pb-3">Imagini</span>
+                <span className="hidden pb-3 sm:block">Mai multe</span>
+              </div>
+            </div>
+
+            <div className="grid gap-8 px-5 py-6 sm:px-10 sm:py-8 lg:grid-cols-[minmax(0,1fr)_350px] lg:gap-12">
+              <div className="min-w-0">
+                <p className="mb-5 text-xs text-[#70757a]">
+                  Aproximativ 21.400 de rezultate (0,41 secunde)
+                </p>
+                <div className="space-y-7">
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e8f0fe] text-xs font-bold text-[#1a73e8]">
+                        P
+                      </span>
+                      <div className="leading-tight">
+                        <p className="text-xs text-[#202124]">
+                          Dr. Elena Radu - Psihoterapeut &amp; Psiholog
+                        </p>
+                        <p className="text-[11px] text-[#4d5156]">
+                          https://www.elenaradu-psiholog.ro
+                        </p>
+                      </div>
+                    </div>
+                    <h2 className="mt-2 text-lg font-medium leading-snug text-[#1a0dab] sm:text-xl">
+                      Dr. Elena Radu | Psihoterapeut &amp; Psiholog Acreditat
+                      CPR București
+                    </h2>
+                    <p className="mt-1 text-sm leading-relaxed text-[#4d5156]">
+                      Cabinet Individual de Psihologie Dr. Elena Radu.
+                      Tratamente validate științific pentru anxietate, atacuri
+                      de panică, depresie și terapie de cuplu în București.
+                      Programează-te online!
+                    </p>
+                    <div className="mt-4 grid gap-3 border-l-2 border-[#dadce0] pl-3 text-sm sm:grid-cols-2">
+                      <span className="font-medium text-[#1a0dab]">
+                        Psihoterapie individuală
+                      </span>
+                      <span className="font-medium text-[#1a0dab]">
+                        Terapie de cuplu &amp; familie
+                      </span>
+                      <span className="font-medium text-[#1a0dab]">
+                        Tarife &amp; programări online
+                      </span>
+                      <span className="font-medium text-[#1a0dab]">
+                        Despre &amp; acreditări CPR
+                      </span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1877f2] text-xs font-bold text-white">
+                        f
+                      </span>
+                      <div className="leading-tight">
+                        <p className="text-xs text-[#202124]">Facebook</p>
+                        <p className="text-[11px] text-[#4d5156]">
+                          facebook.com › dr.elena.radu.psiholog
+                        </p>
+                      </div>
+                    </div>
+                    <h2 className="mt-2 text-lg font-medium leading-snug text-[#1a0dab]">
+                      Psiholog Dr. Elena Radu | București - Facebook
+                    </h2>
+                    <p className="mt-1 text-sm leading-relaxed text-[#4d5156]">
+                      Dr. Elena Radu - Psihoterapeut București. Cabinet
+                      Individual de Psihologie acreditat CPR. Sfaturi despre
+                      sănătate mintală, gestionarea stresului și...
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-50 text-xs font-bold text-sky-700">
+                        Ψ
+                      </span>
+                      <div className="leading-tight">
+                        <p className="text-xs text-[#202124]">La-Psiholog.ro</p>
+                        <p className="text-[11px] text-[#4d5156]">
+                          la-psiholog.ro › cabinet › dr-elena-radu
+                        </p>
+                      </div>
+                    </div>
+                    <h2 className="mt-2 text-lg font-medium leading-snug text-[#1a0dab]">
+                      Dr. Elena Radu - Psiholog, Psihoterapeut București
+                    </h2>
+                    <p className="mt-1 text-sm leading-relaxed text-[#4d5156]">
+                      Profil specialist, recenzii, competențe profesionale,
+                      adresă cabinet și opțiuni de contact rapid.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <aside className="overflow-hidden rounded-xl border border-[#dadce0] bg-white">
+                <div className="grid h-35 grid-cols-[2fr_1fr] gap-0.5 bg-[#f1f3f4]">
+                  <div
+                    className="relative bg-cover bg-center"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(180deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0.28)), url('https://images.unsplash.com/photo-1631377307475-9acfa929b062?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+                    }}
+                  >
+                    <span className="absolute bottom-2 left-2 rounded bg-slate-900/70 px-2 py-1 text-[10px] text-white">
+                      Vezi 14 fotografii
+                    </span>
+                  </div>
+                  <div className="relative flex items-center justify-center overflow-hidden bg-[#e5e3df] bg-[linear-gradient(25deg,transparent_45%,#c4d4c7_46%,#c4d4c7_50%,transparent_51%),linear-gradient(115deg,transparent_43%,#fff_44%,#fff_48%,transparent_49%),linear-gradient(160deg,transparent_42%,#b8cbdc_43%,#b8cbdc_48%,transparent_49%)]">
+                    <span className="absolute h-10 w-10 rounded-full bg-red-500/20" />
+                    <MapPin className="relative h-8 w-8 fill-red-500 text-red-700 drop-shadow-md" />
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h2 className="text-xl font-normal leading-snug text-[#202124]">
+                    Cabinet Psihologie Dr. Elena Radu
+                  </h2>
+                  <div className="mt-2 flex items-center gap-1.5 text-xs text-[#70757a]">
+                    <strong className="text-[#e37400]">4,9</strong>
+                    <span className="flex text-[#fbbc04]">
+                      <Star className="h-3.5 w-3.5 fill-current" />
+                      <Star className="h-3.5 w-3.5 fill-current" />
+                      <Star className="h-3.5 w-3.5 fill-current" />
+                      <Star className="h-3.5 w-3.5 fill-current" />
+                      <Star className="h-3.5 w-3.5 fill-current" />
+                    </span>
+                    <span>(48 de recenzii Google)</span>
+                  </div>
+                  <div className="my-4 grid grid-cols-4 border-y border-[#ebebeb] py-3 text-[#1a73e8]">
+                    <span className="flex flex-col items-center gap-1 text-[10px]">
+                      <Globe className="h-5 w-5" />
+                      Site web
+                    </span>
+                    <span className="flex flex-col items-center gap-1 text-[10px]">
+                      <CarFront className="h-5 w-5" />
+                      Indicații
+                    </span>
+                    <span className="flex flex-col items-center gap-1 text-[10px]">
+                      <Bookmark className="h-5 w-5" />
+                      Salvează
+                    </span>
+                    <span className="flex flex-col items-center gap-1 text-[10px]">
+                      <Phone className="h-5 w-5" />
+                      Apelează
+                    </span>
+                  </div>
+                  <div className="space-y-1.5 text-xs leading-relaxed text-[#3c4043]">
+                    <p>
+                      <strong>Servicii:</strong> La fața locului · Programări
+                      online
+                    </p>
+                    <p>
+                      <strong>Adresă:</strong> Bulevardul Unirii 15, București
+                    </p>
+                    <p>
+                      <strong>Program:</strong>{" "}
+                      <span className="font-semibold text-[#188038]">
+                        Deschis
+                      </span>{" "}
+                      · Închide la 20:00
+                    </p>
+                    <p>
+                      <strong>Telefon:</strong> 0722 000 000
+                    </p>
+                    <p>
+                      <strong>Programări:</strong> elenaradu-psiholog.ro/tarife
+                    </p>
+                  </div>
+                  <div className="mt-4 border-t border-[#ebebeb] pt-3 text-md leading-relaxed text-[#4d5156]">
+                    <strong className="text-[#202124]">
+                      Andreea M.{" "}
+                      <span className="ml-1 text-[#fbbc04] text-lg">★★★★★</span>
+                    </strong>
+                    <br />
+                    <i>
+                      „M-a ajutat enorm să depășesc episoadele severe de
+                      anxietate cu mult profesionalism și empatie.”
+                    </i>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-12 max-w-4xl text-left">
+            <h2 className="text-center text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Ce este bine la această prezență?
+            </h2>
+            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+              <p className="rounded-xl border border-teal-200/80 bg-teal-50/70 p-5 text-base font-semibold leading-relaxed text-slate-700 shadow-sm sm:text-lg">
+                Identitatea și profesia sunt clare din primul rezultat.
+              </p>
+              <p className="rounded-xl border border-teal-200/80 bg-teal-50/70 p-5 text-base font-semibold leading-relaxed text-slate-700 shadow-sm sm:text-lg">
+                Serviciile oferite răspund direct întrebărilor clientului.
+              </p>
+              <p className="rounded-xl border border-teal-200/80 bg-teal-50/70 p-5 text-base font-semibold leading-relaxed text-slate-700 shadow-sm sm:text-lg">
+                Website-ul transmite încredere și profesionalism.
+              </p>
+              <p className="rounded-xl border border-teal-200/80 bg-teal-50/70 p-5 text-base font-semibold leading-relaxed text-slate-700 shadow-sm sm:text-lg">
+                Programarea este simplă, rapidă și ușor de găsit.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="mb-8">
+        <div className="hidden">
           <h1 className="underline mb-6 text-center text-4xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
             Nimic
           </h1>
@@ -86,11 +318,11 @@ export const WhatTheyFindSection: React.FC = () => {
           </div>
         </div>
 
-        <h1 className="mb-8 text-center text-3xl font-bold italic text-slate-600 sm:text-4xl">
+        <h1 className="hidden mb-8 text-center text-3xl font-bold italic text-slate-600 sm:text-4xl">
           sau...
         </h1>
 
-        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+        <div className="hidden grid lg:grid-cols-12 gap-8 items-stretch">
           <div className="lg:col-span-7 flex flex-col">
             <div className="bg-white rounded-2xl border border-slate-200 shadow-md relative flex-1 overflow-hidden">
               <div className="border-b border-slate-200 px-4 sm:px-6 pt-5 pb-0">
