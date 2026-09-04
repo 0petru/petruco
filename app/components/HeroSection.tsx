@@ -42,46 +42,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Video Player Preview (Modern Glassmorphic Stage) */}
         <div className="mt-12 relative max-w-3xl mx-auto">
-          <div
-            className="relative group rounded-2xl border border-slate-200 bg-slate-900 aspect-video flex items-center justify-center cursor-pointer overflow-hidden shadow-2xl hover:shadow-teal-900/20 transition-all duration-300"
-            onClick={onOpenVslModal}
-          >
-            {/* Background Graphic Visual */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-teal-950/80 to-slate-900 opacity-95 group-hover:scale-105 transition-transform duration-700" />
-
-            {/* Decorative Grid Lines */}
-            <div className="absolute inset-0 bg-[radial-gradient(#14b8a6_1px,transparent_1px)] [background-size:24px_24px] opacity-20" />
-
-            {/* Top Bar inside preview */}
-            <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-              <div className="flex items-center gap-2 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-slate-700/60">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                <span className="text-[11px] font-medium text-slate-300">
-                  Prezentare Video · 6 min
-                </span>
-              </div>
-              <span className="text-[11px] font-semibold px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 backdrop-blur-md">
-                Exclusiv pentru Cabinete
-              </span>
-            </div>
-
-            {/* Center Play Button with pulse effect */}
-            <div className="relative z-10 flex flex-col items-center gap-3">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-teal-600 hover:bg-teal-500 text-white flex items-center justify-center shadow-xl shadow-teal-600/40 group-hover:scale-110 transition-all duration-300">
-                <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-1" />
-              </div>
-              <span className="bg-slate-900/90 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-semibold text-slate-200 border border-slate-700 shadow-md">
-                Vezi Prezentarea Video (06:30)
-              </span>
-            </div>
-
-            {/* Bottom Caption bar inside preview */}
-            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-slate-400 bg-slate-900/80 backdrop-blur-md px-4 py-2 rounded-xl border border-slate-700/60 z-10">
-              <span>De la căutare pe Google la prima ședință</span>
-              <span className="font-mono text-teal-400 font-bold">
-                06:30 min
-              </span>
-            </div>
+          <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 aspect-video shadow-2xl">
+            <iframe
+              src="https://player.vimeo.com/video/1224082447?title=0&byline=0&portrait=0"
+              title="Prezentare video pentru cabinete de psihologie"
+              className="absolute inset-0 h-full w-full"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            />
           </div>
 
           {/* Direct CTA Buttons under video preview */}
