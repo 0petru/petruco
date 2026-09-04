@@ -14,9 +14,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAuditModal }) => {
           <div className="w-10 h-10 bg-teal-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md shadow-teal-600/20">
             Ψ
           </div>
-          <div>
+          <div className="hidden sm:block">
             <div className="flex items-center gap-2">
-              <span className="font-bold text-slate-900 tracking-tight text-md">
+              <span className="font-bold text-slate-900 tracking-tight text-xs sm:text-sm lg:text-base leading-tight">
                 Sistemul de Prezență <br />
                 Digitală pentru Psihologi
               </span>
