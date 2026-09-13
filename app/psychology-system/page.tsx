@@ -80,7 +80,7 @@ export default function App() {
         /> */}
 
         {/* 6. SEARCH + MAPS + WEBSITE („NU ESTE DOAR DESPRE UN WEBSITE”) */}
-        <EcosystemSection />
+        {/* <EcosystemSection /> */}
 
         {/* 7. CE SE POATE ÎNTÂMPLA CÂND LIPSESC? („CE COSTĂ SĂ NU AI ASTA?”) */}
         {/* <CostOfInactionSection
