@@ -23,14 +23,14 @@ export function MainNav({ items }: MainNavProps) {
     <div className="flex gap-6 md:gap-10">
       <Link href="/" className="flex items-center space-x-2">
         <span className="inline-block text-xl font-semibold tracking-tight">
-          petruco
+          petruco digital
         </span>
       </Link>
 
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Ce construim</NavigationMenuTrigger>
+            <NavigationMenuTrigger>Servicii</NavigationMenuTrigger>
             <NavigationMenuContent className="dark:bg-[#09090b]">
               <ul className="grid w-[600px] gap-3 p-2 md:grid-cols-2">
                 {components.map((component) => (
@@ -50,7 +50,7 @@ export function MainNav({ items }: MainNavProps) {
             <NavigationMenuTrigger>Produse software</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="w-[420px] p-2">
-                <ListItem href="/docs" title="CRM pentru echipe">
+                <ListItem href="/conecta" title="Conecta - CRM pentru echipe">
                   Gestionează clienții, ofertele și activitățile echipei
                   dintr-un singur loc.
                 </ListItem>
@@ -114,7 +114,7 @@ const components: {
   },
   {
     title: "Website de prezentare în 2 zile",
-    href: "/",
+    href: "/website-in-2-zile",
     description:
       "Un website profesionist, rapid și ușor de înțeles, care explică valoarea ta și îi ajută pe clienți să facă următorul pas.",
     icon: (
@@ -125,7 +125,7 @@ const components: {
   },
   {
     title: "AI și Automatizări",
-    href: "/",
+    href: "/ai-si-automatizari",
     description:
       "Receptionist 24/7 AI, Lead Qualification & Routing, Chatbot, Sales Development Rep, Onboarding automat",
     icon: (

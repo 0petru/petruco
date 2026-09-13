@@ -1,17 +1,23 @@
-import Image from "next/image";
+"use client";
+
+import { Layout } from "./components/Layout";
+import Hero from "./components/pages/Home/Hero";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        Ungureanu Calin Petru (0petru) <br /> coming soon...
-        <a
-          href="/psychology-system"
-          className="mt-10 text-blue-500 hover:underline"
-        >
-          Go to Psychology System
-        </a>
-      </main>
+    <div className="flex flex-1 flex-col items-center font-sans">
+      <Layout>
+        <main className="flex w-full flex-1 flex-col bg-white py-32 sm:items-start">
+          <Hero />
+
+          <a
+            href="/psychology-system"
+            className="mt-10 text-blue-500 hover:underline"
+          >
+            Go to Psychology System
+          </a>
+        </main>
+      </Layout>
     </div>
   );
 }
