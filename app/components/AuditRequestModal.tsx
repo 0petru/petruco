@@ -44,7 +44,7 @@ export const AuditRequestModal: React.FC<AuditRequestModalProps> = ({
     setSubmitError("");
 
     try {
-      await submitAudit(formData);
+      await submitAudit(formData, "psychology-system-modal");
       setIsSubmitted(true);
     } catch (error) {
       setSubmitError(

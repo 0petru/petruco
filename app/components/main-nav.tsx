@@ -4,6 +4,7 @@ import { Bot, Globe2, Rocket, ShoppingCart } from "lucide-react";
 
 import { NavItem } from "@/types/nav";
 import { cn } from "@/lib/utils";
+import { Brand } from "@/app/components/Brand";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -20,11 +21,9 @@ interface MainNavProps {
 
 export function MainNav({ items }: MainNavProps) {
   return (
-    <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="flex items-center space-x-2">
-        <span className="inline-block text-xl font-semibold tracking-tight">
-          petruco digital
-        </span>
+    <div className="flex items-center gap-6 md:gap-10">
+      <Link href="/" className="flex items-center">
+        <Brand size="md" text="petruco digital" priority />
       </Link>
 
       <NavigationMenu>
@@ -55,8 +54,8 @@ export function MainNav({ items }: MainNavProps) {
                   dintr-un singur loc.
                 </ListItem>
                 <ListItem
-                  href="/docs/installation"
-                  title="Scheduler pentru programări"
+                  href="/calendaro"
+                  title="Calendaro - Scheduler pentru programări"
                 >
                   Permite clienților să aleagă un interval și redu timpul
                   pierdut cu programările.
@@ -72,11 +71,12 @@ export function MainNav({ items }: MainNavProps) {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Despre noi
-              </NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink
+              render={<Link href="/docs" />}
+              className={navigationMenuTriggerStyle()}
+            >
+              Despre noi
+            </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
@@ -92,7 +92,7 @@ const components: {
 }[] = [
   {
     title: "Dezvoltare Aplicații Web și Mobile",
-    href: "/",
+    href: "/dezvoltare-aplicatii",
     description:
       "Transformăm ideea ta într-un produs digital rapid, clar și pregătit să crească odată cu afacerea.",
     icon: (
@@ -148,33 +148,30 @@ const components: {
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a"> & { icon?: React.ReactNode }
+  React.ComponentPropsWithoutRef<"a"> & { href: string; icon?: React.ReactNode }
 >(({ className, title, children, icon, ...props }, ref) => {
   return (
     <li>
-      <NavigationMenuLink>
-        <Link
-          {...props}
-          ref={ref}
-          className={cn(
-            "flex select-none space-y-1 rounded-md leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
-          )}
-        >
-          <div className="flex items-center justify-center">
-            <div className="flex h-[40px] w-[40px] items-center justify-center">
-              {icon}
-            </div>
+      <NavigationMenuLink
+        render={<Link {...props} ref={ref} />}
+        className={cn(
+          "flex select-none space-y-1 rounded-md leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+          className,
+        )}
+      >
+        <div className="flex items-center justify-center">
+          <div className="flex h-[40px] w-[40px] items-center justify-center">
+            {icon}
           </div>
-          <div>
-            <div className="block select-none space-y-1 pl-3 leading-none no-underline outline-none transition-colors">
-              <div className="text-sm font-medium leading-none">{title}</div>
-              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                {children}
-              </p>
-            </div>
+        </div>
+        <div>
+          <div className="block select-none space-y-1 pl-3 leading-none no-underline outline-none transition-colors">
+            <div className="text-sm font-medium leading-none">{title}</div>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+              {children}
+            </p>
           </div>
-        </Link>
+        </div>
       </NavigationMenuLink>
     </li>
   );

@@ -1,23 +1,34 @@
-"use client";
+import type { Metadata } from "next";
 
-import { Layout } from "./components/Layout";
-import Hero from "./components/pages/Home/Hero";
+import { Closing } from "./components/home/Closing";
+import { Faq } from "./components/home/Faq";
+import { Hero } from "./components/home/Hero";
+import { Offers } from "./components/home/Offers";
+import { Products } from "./components/home/Products";
+import { Services } from "./components/home/Services";
+
+export const metadata: Metadata = {
+  title: "Petruco Digital — Software, AI și automatizări pentru afaceri",
+  description:
+    "Companie de software full-service: facem design, construim, lansăm și menținem website-uri, aplicații, agenți AI și automatizări. Website de prezentare livrat în 2 zile, cu SEO, plăți și rezervări incluse.",
+  openGraph: {
+    title: "Petruco Digital — Software, AI și automatizări pentru afaceri",
+    description:
+      "Design, dezvoltare, lansare și mentenanță pentru produse digitale. Website de prezentare în 2 zile sau sistem complet de prezență digitală.",
+    type: "website",
+    locale: "ro_RO",
+  },
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col items-center font-sans">
-      <Layout>
-        <main className="flex w-full flex-1 flex-col bg-white py-32 sm:items-start">
-          <Hero />
-
-          <a
-            href="/psychology-system"
-            className="mt-10 text-blue-500 hover:underline"
-          >
-            Go to Psychology System
-          </a>
-        </main>
-      </Layout>
-    </div>
+    <main className="min-h-screen bg-white text-zinc-900 antialiased">
+      <Hero />
+      <Services />
+      <Offers />
+      <Products />
+      <Faq />
+      <Closing />
+    </main>
   );
 }

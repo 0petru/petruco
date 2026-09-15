@@ -40,7 +40,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({
     setSubmitError("");
 
     try {
-      await submitAudit(formData);
+      await submitAudit(formData, "psychology-system-oferta");
       setIsSubmitted(true);
     } catch (error) {
       setSubmitError(

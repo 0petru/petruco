@@ -20,7 +20,7 @@ import { WebsitePreviewModal } from "./../components/WebsitePreviewModal";
 import { AuditRequestModal } from "./../components/AuditRequestModal";
 import { TheResultSection } from "./../components/TheResultSection";
 import { WebsiteExample } from "./types";
-import { ArrowUp, Play, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUp, Play, Sparkles } from "lucide-react";
 import { HowItShouldLookSection } from "../components/HowItShouldLookSection";
 
 export default function App() {
@@ -112,15 +112,19 @@ export default function App() {
       {showScrollTop && (
         <div className="fixed bottom-6 right-6 z-30 flex items-center gap-2 animate-fadeIn">
           <button
+            type="button"
             onClick={() => setIsAuditModalOpen(true)}
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-[#2D5A27] hover:bg-[#3E7B36] text-white font-bold text-[10px] uppercase tracking-widest shadow-md transition-all cursor-pointer border border-[#2D5A27]"
+            className="hidden sm:inline-flex items-center gap-2 rounded-xl bg-teal-600 hover:bg-teal-700 px-4 py-3 text-xs font-semibold text-white shadow-lg shadow-teal-600/25 transition-all cursor-pointer"
           >
-            <span>Analiză Gratuită →</span>
+            <span>Analiză Gratuită</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </button>
           <button
+            type="button"
             onClick={scrollToTop}
-            className="p-3 bg-[#1A1A1A] text-white hover:bg-[#333] border border-[#333] shadow-md transition-all cursor-pointer"
+            className="rounded-xl border border-slate-200 bg-white p-3 text-slate-700 shadow-[0_18px_40px_-22px_rgba(24,24,27,0.5)] transition-colors hover:bg-slate-100 cursor-pointer"
             title="Înapoi sus"
+            aria-label="Înapoi sus"
           >
             <ArrowUp className="w-4 h-4" />
           </button>
