@@ -3,13 +3,61 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, ArrowUp, ShieldCheck } from "lucide-react";
 
-/** Bara de urgență + garanție, lipită sub navbar-ul global (h-16). */
+const WEEKLY_SLOTS = 4;
+
+/**
+ * Locuri rămase în săptămâna curentă:
+ * - luni → miercuri (începutul săptămânii): 3 locuri
+ * - joi → duminică (sfârșitul săptămânii): 1 loc
+ */
+function getRemainingSlots(date: Date = new Date()) {
+  const day = date.getDay(); // 0 = duminică, 1 = luni, ... 6 = sâmbătă
+  const isEarlyWeek = day >= 1 && day <= 3;
+  return isEarlyWeek ? 3 : 1;
+}
+
+/**
+ * Bara de urgență + garanție, lipită chiar în vârful paginii (`top-0`).
+ *
+ * Pe landing page-ul „Website în 2 zile” nu există navbar (vezi `LpTop` și
+ * `ConditionalNavbar`), deci bara e singurul element fix din capul paginii.
+ * Pe celelalte rute, unde navbar-ul global e prezent, bara nu se folosește.
+ */
 export function UrgencyBar() {
+  // null pe server → text stabil, apoi valoarea reală după montare (fără hydration mismatch).
+  const [slots, setSlots] = useState<number | null>(null);
+
+  useEffect(() => {
+    setSlots(getRemainingSlots());
+
+    // Reîmprospătează la fiecare oră, ca bara să rămână corectă peste noapte.
+    const interval = setInterval(
+      () => setSlots(getRemainingSlots()),
+      60 * 60 * 1000,
+    );
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="sticky top-16 z-30 border-b border-zinc-800 bg-zinc-900 px-4 py-2.5 text-center text-xs font-semibold text-white">
-      <ShieldCheck className="mr-1.5 -mt-0.5 inline size-3.5 text-emerald-400" />
-      Garanție de fier: site live în 2 zile lucrătoare sau primești{" "}
-      <span className="text-emerald-400">100% din bani înapoi</span>.
+    <div className="sticky top-0 z-40 border-b border-zinc-800 bg-zinc-900 px-4 py-2.5 text-center text-xs font-semibold text-white">
+      <p className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-2 gap-y-1">
+        <ShieldCheck className="size-3.5 shrink-0 text-emerald-400" />
+        <span>
+          Ca să livrăm fiecare site în 48h, acceptăm doar {WEEKLY_SLOTS}{" "}
+          proiecte pe săptămână.
+        </span>
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2 py-0.5 text-emerald-300 ring-1 ring-emerald-500/30">
+          <span className="relative flex size-1.5">
+            <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex size-1.5 rounded-full bg-emerald-400" />
+          </span>
+          {slots === null
+            ? "Ultimele locuri disponibile"
+            : slots === 1
+              ? `Ultimul loc rămas din ${WEEKLY_SLOTS}`
+              : `Mai rămân ${slots} locuri din ${WEEKLY_SLOTS}`}
+        </span>
+      </p>
     </div>
   );
 }

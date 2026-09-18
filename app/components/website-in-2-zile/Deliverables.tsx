@@ -18,7 +18,7 @@ const DELIVERABLES = [
   {
     icon: FileText,
     title: "Până la 10 pagini",
-    text: "Acasă, Despre, Servicii detaliate, Portofoliu, Recenzii și Contact — structurate pe ce vinzi, nu pe un șablon.",
+    text: "Acasă, Despre, Servicii, Portofoliu, Recenzii, Contact, etc. structurate pe ce vinzi, nu pe un șablon.",
   },
   {
     icon: Sparkles,
@@ -106,7 +106,7 @@ export function Deliverables() {
                 <span className="flex size-9 items-center justify-center rounded-lg border border-zinc-200 bg-zinc-50 text-zinc-900">
                   <Icon className="size-4" />
                 </span>
-                <h3 className="mt-4 text-sm font-semibold text-zinc-900">
+                <h3 className="mt-4 text-sm font-semibold text-zinc-900 text-xl">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-600">

@@ -127,5 +127,10 @@
   }
   html {
     @apply font-sans;
+    /* Scroll lin pentru ancorele interne (#ce-include, #garantie, #intrebari,
+       #contact) și spațiu suficient ca titlul secțiunii să nu rămână ascuns
+       sub navbar-ul sticky (h-16) + bara de urgență. */
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
   }
 }

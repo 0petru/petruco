@@ -4,11 +4,9 @@ import { Deliverables } from "@/app/components/website-in-2-zile/Deliverables";
 import { Faq } from "@/app/components/website-in-2-zile/Faq";
 import { Guarantee } from "@/app/components/website-in-2-zile/Guarantee";
 import { Hero } from "@/app/components/website-in-2-zile/Hero";
+import { LpTop } from "@/app/components/website-in-2-zile/LpTop";
 import { Pain } from "@/app/components/website-in-2-zile/Pain";
-import {
-  FloatingCta,
-  UrgencyBar,
-} from "@/app/components/website-in-2-zile/Sticky";
+import { FloatingCta } from "@/app/components/website-in-2-zile/Sticky";
 
 export const metadata: Metadata = {
   title: "Website de prezentare în 2 zile | Petruco Digital",
@@ -25,14 +23,17 @@ export const metadata: Metadata = {
 
 export default function WebsiteIn2ZilePage() {
   return (
-    <main className="min-h-screen bg-white text-zinc-900 antialiased">
-      <UrgencyBar />
-      <Hero />
-      <Pain />
-      <Deliverables />
-      <Guarantee />
-      <Faq />
-      <FloatingCta />
-    </main>
+    <>
+      <LpTop />
+
+      <main className="min-h-screen bg-white text-zinc-900 antialiased">
+        <Hero />
+        <Pain />
+        <Deliverables />
+        <Guarantee />
+        <Faq />
+        <FloatingCta />
+      </main>
+    </>
   );
 }

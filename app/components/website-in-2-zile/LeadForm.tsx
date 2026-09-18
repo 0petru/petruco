@@ -23,6 +23,7 @@ const inputClass =
 export function LeadForm({
   idPrefix,
   source,
+  showEmail = true,
   eyebrow = "Zero birocrație",
   heading = "Te sunăm noi. Tu doar răspunzi.",
   subheading = "Completează datele și alege intervalul care îți convine. Apelul durează 15 minute.",
@@ -32,6 +33,11 @@ export function LeadForm({
   idPrefix: string;
   /** Obligatoriu: ajunge în coloana „Sursă" din Google Sheets. */
   source: string;
+  /**
+   * Afișează câmpul de email. Îl ascundem în hero, unde fiecare câmp în plus
+   * scade conversia pe mobil; pe desktop îl lăsăm doar în formularul final.
+   */
+  showEmail?: boolean;
   eyebrow?: string;
   heading?: string;
   subheading?: string;
@@ -115,7 +121,11 @@ export function LeadForm({
           />
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div
+          className={
+            showEmail ? "grid gap-4 sm:grid-cols-2" : "grid gap-4 grid-cols-1"
+          }
+        >
           <div>
             <label htmlFor={`${idPrefix}-phone`} className={labelClass}>
               Telefon
@@ -131,20 +141,22 @@ export function LeadForm({
             />
           </div>
 
-          <div>
-            <label htmlFor={`${idPrefix}-email`} className={labelClass}>
-              Email
-            </label>
-            <input
-              id={`${idPrefix}-email`}
-              name="email"
-              type="email"
-              required
-              autoComplete="email"
-              placeholder="nume@firma.ro"
-              className={inputClass}
-            />
-          </div>
+          {showEmail ? (
+            <div>
+              <label htmlFor={`${idPrefix}-email`} className={labelClass}>
+                Email
+              </label>
+              <input
+                id={`${idPrefix}-email`}
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                placeholder="nume@firma.ro"
+                className={inputClass}
+              />
+            </div>
+          ) : null}
         </div>
 
         <div>

@@ -46,9 +46,7 @@ export function SectionIntro({
   align?: "left" | "center";
 }) {
   return (
-    <div
-      className={cn("max-w-2xl", align === "center" && "mx-auto text-center")}
-    >
+    <div className={cn(align === "center" && "mx-auto text-center")}>
       <Reveal>
         <Eyebrow>{eyebrow}</Eyebrow>
       </Reveal>

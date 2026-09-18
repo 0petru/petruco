@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { cn } from "@/lib/utils";
 
 interface BrandProps {
@@ -16,8 +14,9 @@ interface BrandProps {
 }
 
 /**
- * Marca Petruco Digital: logo-ul din `public/logo/logo.png` într-o casetă
- * rounded închisă la culoare, urmată de numele brandului.
+ * Marca Petruco Digital: numele brandului, folosit identic în navbar, footer
+ * și bara de urgență. Trecerea prin această componentă ține marca sincronizată
+ * în toate locurile.
  */
 export function Brand({
   text = "Petruco Digital",
@@ -29,24 +28,6 @@ export function Brand({
 }: BrandProps) {
   return (
     <span className={cn("flex items-center gap-2", className)}>
-      <span
-        className={cn(
-          "flex shrink-0 items-center justify-center overflow-hidden rounded-lg bg-zinc-900 ring-1 ring-inset",
-          tone === "light" ? "ring-black/5" : "ring-white/10",
-          size === "sm" ? "size-7" : "size-9",
-        )}
-      >
-        <Image
-          src="/logo/logo.png"
-          alt=""
-          width={72}
-          height={72}
-          priority={priority}
-          sizes={size === "sm" ? "28px" : "36px"}
-          className="size-full object-cover"
-        />
-      </span>
-
       <span
         className={cn(
           "font-semibold tracking-tight",

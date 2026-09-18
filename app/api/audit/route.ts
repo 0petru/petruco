@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 
-const requiredFields = [
-  "fullName",
-  "email",
-  "phone",
-  "clinicOrName",
-  "city",
-] as const;
+/**
+ * Câmpuri obligatorii. `email` lipsește intenționat: formularul din hero
+ * colectează doar nume, telefon, afacere și interval orar, ca să reducă
+ * fricțiunea pe mobil. Telefonul rămâne canalul principal de contact.
+ */
+const requiredFields = ["fullName", "phone", "clinicOrName", "city"] as const;
 
 export async function POST(request: Request) {
   const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
@@ -33,11 +32,14 @@ export async function POST(request: Request) {
       );
     }
 
+    const email = typeof data.email === "string" ? data.email.trim() : "";
+
     const response = await fetch(webhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         ...data,
+        email,
         submittedAt: new Date().toISOString(),
       }),
       cache: "no-store",

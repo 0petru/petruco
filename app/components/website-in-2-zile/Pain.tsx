@@ -208,16 +208,6 @@ export function Pain() {
           })}
         </div>
       </Section>
-
-      <Section>
-        <SectionIntro
-          eyebrow="Costul inacțiunii"
-          title="Cât te costă, de fapt, fiecare lună fără un site care vinde?"
-          description="Cel mai scump lucru nu este website-ul. Este timpul în care clienții tăi caută, nu te găsesc, și cumpără de la altcineva."
-        />
-
-        <LossCalculator />
-      </Section>
     </>
   );
 }
