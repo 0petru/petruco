@@ -6,6 +6,7 @@ import { ArrowRight, Building2, ShieldCheck, Smartphone } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 import { Brand } from "@/app/components/Brand";
+import { Footer } from "@/components/Footer";
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
@@ -148,47 +149,7 @@ export function Closing() {
         </div>
       </section>
 
-      <footer className="bg-zinc-50/70">
-        <div className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)]">
-            <div>
-              <Brand />
-              <p className="mt-4 max-w-xs text-sm leading-relaxed text-zinc-600">
-                Construim, lansăm și întreținem produse digitale: website-uri,
-                aplicații, agenți AI și automatizări. Din România, pentru
-                afaceri care vor să crească.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
-              {FOOTER_COLUMNS.map((column) => (
-                <div key={column.title}>
-                  <h3 className="text-xs font-semibold tracking-[0.14em] text-zinc-900 uppercase">
-                    {column.title}
-                  </h3>
-                  <ul className="mt-4 space-y-2.5">
-                    {column.links.map((link) => (
-                      <li key={link.label}>
-                        <FooterLinkItem link={link} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-zinc-200 pt-6 sm:flex-row">
-            <p className="text-xs text-zinc-500">
-              © {new Date().getFullYear()} Petruco Digital. Toate drepturile
-              rezervate.
-            </p>
-            <p className="text-xs text-zinc-500">
-              Design, dezvoltare și mentenanță — de la o singură echipă.
-            </p>
-          </div>
-        </div>
-      </footer>
+     <Footer/>
     </>
   );
 }
