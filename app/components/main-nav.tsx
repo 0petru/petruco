@@ -1,6 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import { Bot, Globe2, Rocket, ShoppingCart } from "lucide-react";
+import { Globe2, Rocket, TrendingUp } from "lucide-react";
 
 import { NavItem } from "@/types/nav";
 import { cn } from "@/lib/utils";
@@ -131,6 +131,17 @@ const components: {
     icon: (
       <div className="flex h-10 w-10 items-center justify-center rounded-md bg-slate-300 text-xl font-bold text-white shadow-md shadow-teal-600/20">
         🤖
+      </div>
+    ),
+  },
+  {
+    title: "Meta Ads & Funnels",
+    href: "/meta-ads-funnels",
+    description:
+      "Creative noi (static, video, UGC), funnel și user journey optimizate, până când ROAS-ul crește.",
+    icon: (
+      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-blue-600 text-xl font-bold text-white shadow-md shadow-teal-600/20">
+        <TrendingUp className="size-5" />
       </div>
     ),
   },
