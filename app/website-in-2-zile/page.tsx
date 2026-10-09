@@ -6,6 +6,7 @@ import { Guarantee } from "@/app/components/website-in-2-zile/Guarantee";
 import { Hero } from "@/app/components/website-in-2-zile/Hero";
 import { LpTop } from "@/app/components/website-in-2-zile/LpTop";
 import { Pain } from "@/app/components/website-in-2-zile/Pain";
+import { SocialProof } from "@/app/components/website-in-2-zile/SocialProof";
 import { FloatingCta } from "@/app/components/website-in-2-zile/Sticky";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function WebsiteIn2ZilePage() {
         <Hero />
         <Pain />
         <Deliverables />
+        <SocialProof />
         <Guarantee />
         <Faq />
         <FloatingCta />

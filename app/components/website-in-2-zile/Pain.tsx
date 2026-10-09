@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { CheckCircle2, TrendingUp, XCircle } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { CheckCircle2, Search, TrendingUp, XCircle } from "lucide-react";
 
 import { Section, SectionIntro } from "@/app/components/home/shared";
+
+const SEARCH_QUERY = "firmă de servicii lângă mine";
 
 const SCENARIOS = [
   {
@@ -35,6 +38,64 @@ const SCENARIOS = [
 /** Separator de mii determinist — fără Intl, ca să nu difere între server și client. */
 function formatLei(value: number) {
   return `${value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")} lei`;
+}
+
+/**
+ * Mockup animat de căutare pe Google: textul se scrie literă cu literă când
+ * secțiunea intră în viewport, apoi cursorul dispare.
+ */
+function GoogleSearchAnimation() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.4 });
+  const [typedText, setTypedText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    if (!inView || typedText.length >= SEARCH_QUERY.length) return;
+
+    const timer = window.setTimeout(() => {
+      setTypedText(SEARCH_QUERY.slice(0, typedText.length + 1));
+    }, 90);
+
+    return () => window.clearTimeout(timer);
+  }, [inView, typedText]);
+
+  useEffect(() => {
+    if (typedText.length !== SEARCH_QUERY.length) return;
+
+    const timer = window.setTimeout(() => setShowCursor(false), 1400);
+    return () => window.clearTimeout(timer);
+  }, [typedText]);
+
+  return (
+    <div
+      ref={ref}
+      className="mx-auto mt-12 max-w-3xl rounded-2xl border border-zinc-200 bg-zinc-50 p-5 shadow-inner sm:p-6"
+    >
+      <div className="mb-4 flex items-center justify-between text-xs text-zinc-400">
+        <Image
+          src="/logo/google.png"
+          alt="Google"
+          width={94}
+          height={32}
+          className="h-auto w-auto object-contain"
+        />
+      </div>
+
+      <div className="flex items-center gap-3 rounded-full border border-zinc-300 bg-white px-4 py-3 shadow-sm">
+        <Search className="size-4 shrink-0 text-zinc-400" />
+        <div className="min-w-0 flex-1 overflow-hidden text-sm font-medium whitespace-nowrap text-zinc-800 sm:text-base">
+          <span>{typedText}</span>
+          {showCursor && typedText.length < SEARCH_QUERY.length ? (
+            <span className="ml-0.5 inline-block h-5 w-[2px] animate-pulse rounded-full bg-zinc-800 align-middle" />
+          ) : null}
+        </div>
+        <span className="inline-flex items-center justify-center rounded-full bg-zinc-100 px-2.5 py-1 text-[13px] font-semibold text-zinc-600">
+          Căutare
+        </span>
+      </div>
+    </div>
+  );
 }
 
 function LossCalculator() {
@@ -147,6 +208,8 @@ export function Pain() {
           title="Cineva a auzit de tine și te caută pe Google chiar acum"
           description="Diferenta dintre a fi găsit și a fi ignorat nu ține de noroc. Ține de ce găsește omul în primele 10 secunde."
         />
+
+        <GoogleSearchAnimation />
 
         <div className="mt-12 grid gap-4 lg:grid-cols-2">
           {SCENARIOS.map((scenario, i) => {

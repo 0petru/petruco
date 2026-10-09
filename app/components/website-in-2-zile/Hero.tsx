@@ -65,10 +65,10 @@ export function Hero() {
             className="mt-6 text-base leading-loose text-zinc-600 sm:text-lg"
           >
             <span>
-              Fără să scrii un singur rând de text. Fără să cauți dezvoltatori.
-              Fără săptămâni pierdute în ședințe inutile. Noi preluăm strategia,
-              textele, designul, plățile cu cardul și calendarul de rezervări.
-              Tu aloci doar 15 minute la telefon.
+              Fără să scrii un singur rând de text. Fără programatori. Fără
+              săptămâni pierdute în ședințe. Noi preluăm strategia, textele,
+              designul, plățile online și programările. Tu aloci doar 15 minute
+              la telefon.
             </span>
           </motion.div>
 

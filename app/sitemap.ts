@@ -28,6 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/mvp-in-7-zile`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/ai-si-automatizari`,
       changeFrequency: "monthly",
       priority: 0.9,
@@ -41,6 +46,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/psychology-system`,
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/despre-noi`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/cariere`,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      changeFrequency: "weekly",
+      priority: 0.7,
     },
   ];
 }

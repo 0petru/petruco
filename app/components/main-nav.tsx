@@ -1,6 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import { Globe2, Rocket, TrendingUp } from "lucide-react";
+import { Briefcase, Globe2, Newspaper, Rocket, TrendingUp, Users } from "lucide-react";
 
 import { NavItem } from "@/types/nav";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 interface MainNavProps {
@@ -71,18 +70,68 @@ export function MainNav({ items }: MainNavProps) {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              render={<Link href="/docs" />}
-              className={navigationMenuTriggerStyle()}
-            >
-              Despre noi
-            </NavigationMenuLink>
+            <NavigationMenuTrigger>Despre noi</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="w-[360px] p-2">
+                {aboutPages.map((page) => (
+                  <ListItem
+                    key={page.title}
+                    title={page.title}
+                    href={page.href}
+                    icon={page.icon}
+                  >
+                    {page.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
     </div>
   );
 }
+
+const aboutPages: {
+  title: string;
+  href: string;
+  description: string;
+  icon: React.ReactNode;
+}[] = [
+  {
+    title: "Despre noi",
+    href: "/despre-noi",
+    description:
+      "Cine suntem, cum lucrăm și de ce livrăm în zile, nu în luni.",
+    icon: (
+      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
+        <Users className="size-5" />
+      </div>
+    ),
+  },
+  {
+    title: "Cariere",
+    href: "/cariere",
+    description:
+      "Pozițiile deschise și motivele pentru care merită să lucrezi cu noi.",
+    icon: (
+      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-zinc-800 text-white shadow-md shadow-zinc-800/20">
+        <Briefcase className="size-5" />
+      </div>
+    ),
+  },
+  {
+    title: "Blog",
+    href: "/blog",
+    description:
+      "Idei practice despre website-uri, SEO, plăți online și automatizări.",
+    icon: (
+      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-amber-500 text-white shadow-md shadow-amber-500/20">
+        <Newspaper className="size-5" />
+      </div>
+    ),
+  },
+];
 
 const components: {
   title: string;
@@ -103,7 +152,7 @@ const components: {
   },
   {
     title: "MVP în 7 zile",
-    href: "/",
+    href: "/mvp-in-7-zile",
     description:
       "Testează piața cu o primă versiune funcțională, construită pentru feedback real și decizii rapide.",
     icon: (
