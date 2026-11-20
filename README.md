@@ -30,7 +30,7 @@ The audit forms submit to `/api/audit`, which forwards the data to a Google Apps
 
 The script creates an `Audituri` sheet automatically and appends a row for each submitted audit.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Inter](https://fonts.google.com/specimen/Inter).
 
 ## Learn More
 

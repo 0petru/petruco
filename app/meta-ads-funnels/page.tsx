@@ -12,7 +12,7 @@ import { Services } from "@/app/components/meta-ads-funnels/Services";
 import { FloatingCta } from "@/app/components/meta-ads-funnels/Sticky";
 
 /**
- * Fontul paginii. Restul site-ului folosește Geist (setat pe `body`), dar aici
+ * Fontul paginii. Restul site-ului folosește Inter (setat pe `body`), dar aici
  * forțăm Inter doar pe conținutul acestei rute, fără să atingem `globals.css`.
  */
 const inter = Inter({
